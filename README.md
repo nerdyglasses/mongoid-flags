@@ -1,4 +1,4 @@
-# mongoid-flags [![Build Status](http://travis-ci.org/tjackiw/mongoid-flags.png)](http://travis-ci.org/tjackiw/mongoid-flags)
+# mongoid-flags [![Build Status](https://secure.travis-ci.org/tjackiw/mongoid-flags.png)](https://travis-ci.org/tjackiw/mongoid-flags)
 
 Simple document flagging system for mongoid v3. HEAVILY INSPIRED by mongoid-simple-roles
 
