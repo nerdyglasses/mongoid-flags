@@ -9,45 +9,28 @@ rescue Bundler::BundlerError => e
   $stderr.puts "Run `bundle install` to install missing gems"
   exit e.status_code
 end
-require 'rake'
 
+require 'rake'
 require 'jeweler'
+
 Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "mongoid-flags"
-  gem.homepage = "http://github.com/tjackiw/mongoid-flags"
-  gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "tjackiw@gmail.com"
-  gem.authors = ["Thiago Jackiw"]
-  # dependencies defined in Gemfile
+  gem.name          = "mongoid-flags"
+  gem.version       = '0.0.1'
+  gem.homepage      = "http://github.com/tjackiw/mongoid-flags"
+  gem.license       = "MIT"
+  gem.summary       = %Q{Simple record flagging system for Mongoid documents}
+  gem.description   = %Q{Simple record flagging system for Mongoid documents}
+  gem.authors       = ["Thiago Jackiw"]
+  gem.email         = "tjackiw@gmail.com"
+  gem.files         = `git ls-files`.split("\n")
+  gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  gem.require_paths = ["lib"]
 end
 Jeweler::RubygemsDotOrgTasks.new
 
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-end
+task :default => :spec
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
-end
-
-task :default => :test
-
-require 'rdoc/task'
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "mongoid-flags #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
+desc "Run all specs"
+task "spec" do
+  exec "bundle exec rspec spec"
 end

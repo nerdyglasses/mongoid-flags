@@ -1,0 +1,6 @@
+test:
+  sessions:
+    default:
+      database: mongoid-flags
+      hosts:
+        - localhost:27017
