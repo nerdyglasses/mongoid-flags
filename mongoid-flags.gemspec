@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Thiago Jackiw"]
   s.date = "2012-11-22"
-  s.description = "Simple document flagging system for Mongoid"
+  s.description = "Simple record flagging system for Mongoid documents"
   s.email = "tjackiw@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -35,7 +35,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.24"
-  s.summary = "Simple document flagging system for Mongoid"
+  s.summary = "Simple record flagging system for Mongoid documents"
   s.test_files = ["spec/helper.rb", "spec/mongoid-flags_spec.rb"]
 
   if s.respond_to? :specification_version then
